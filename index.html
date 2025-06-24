@@ -7,20 +7,39 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
+  
   <div class="container">
+    <button id="toggle-theme" class="theme-btn">🌙 Mode Sombre</button>
     <h1>📝 Ma Liste de Tâches</h1>
+
+    <input type="text" id="search-input" placeholder="🔍 Rechercher une tâche...">
 
     <div id="message" class="message"></div>
 
     <div class="input-section">
       <input type="text" id="task-input" placeholder="Ajouter une tâche..." />
+      <input type="date" id="task-date" />
       <button id="add-btn">Ajouter</button>
     </div>
+
+    <div class="filters">
+      <button data-filter="all" class="filter-btn active">Toutes</button>
+      <button data-filter="done" class="filter-btn">Terminées</button>
+      <button data-filter="todo" class="filter-btn">En cours</button>
+      <button id="reset-filters" class="filter-btn reset-btn">Réinitialiser</button>
+    </div>
+
+    <button id="clear-all" class="clear-btn">Tout effacer 🧹</button>
 
     <ul id="task-list">
       <!-- Tâches générées ici -->
     </ul>
+
+    <div id="task-counter">
+      <p>📝 Total : <span id="total">0</span></p>
+      <p>✅ Terminées : <span id="done">0</span></p>
+      <p>⏳ En cours : <span id="todo">0</span></p>
+    </div>
   </div>
 
   <script src="script.js"></script>
