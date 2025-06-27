@@ -222,7 +222,9 @@ searchInput.addEventListener("input", () => {
   const tasks = document.querySelectorAll("#task-list li");
 
   tasks.forEach(task => {
-    const taskText = task.firstChild.textContent.toLowerCase();
+    const span = task.querySelector("span");
+    const taskText = span ? span.textContent.toLowerCase() : "";
+
     if (taskText.includes(searchTerm)) {
       task.style.display = "flex";
     } else {
@@ -230,6 +232,7 @@ searchInput.addEventListener("input", () => {
     }
   });
 });
+
 
 const body = document.body;
 
